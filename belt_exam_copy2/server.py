@@ -16,7 +16,7 @@ D - delete - DELETE
 '''
 
 app = Flask(__name__)
-app.secret_key = "nrd_key"
+app.secret_key = "secret_key"
 bcrypt = Bcrypt(app)
 database = "belt_exam"
 
