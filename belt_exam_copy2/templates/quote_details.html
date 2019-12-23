@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belt Exam</title>
+
+    <style>        
+        *{
+            padding: 0px;
+            margin: 0px auto;
+            /* outline: 1px solid red; */
+        }
+
+        body{
+            background-color:rgb(0, 0, 0);
+        }
+
+        #container{
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(106, 62, 62),rgb(0, 0, 0));
+            min-height: 400px;
+            width: 970px;
+            border: 2px solid rgb(211, 20, 20);
+            border-radius: 7px;            
+        }
+
+        .back_link{
+            display: inline-block;
+            vertical-align: top;
+            margin: 35px 0px 0px 25px;
+            padding: 2px 7px 2px 7px;           
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(211, 20, 20);
+            background-color: rgb(0,0,0);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        h1{
+            display: inline-block;
+            margin: 10px 0px 20px 20px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 56px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        h4{
+            display: inline-block;
+            margin: 10px 0px 20px 350px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(247, 175, 98);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        p{
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px 10px 10px 0px;
+            padding: 5px 20px 5px 20px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 22px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 1px solid rgb(211, 20, 20);
+        }
+
+        .quote_box{
+            min-height: 140px;
+            width: 300px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(211, 20, 20);
+            margin: 5px 0px 40px 70px;
+            padding: 0px 0px 0px 10px;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;           
+            font-size: 20px;
+            border: 1px solid rgb(211, 20, 20);
+        }
+
+        .logout_button{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(106, 62, 62),rgb(0, 0, 0));
+            margin: 20px 0px 20px 20px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        .red{
+            color: rgb(191, 0, 0);
+        }
+    </style>
+
+</head>
+<body>
+    <main id="container">
+        <header>
+            <h1>{{ user.first_name }} {{ user.last_name }}s' Quotes</h1>
+            <a class="back_link" href="/landing">Back to Home</a>
+            <a class="logout_button" href="/logout">Logout</a>
+        </header>
+
+        {% for quote in quote %}
+            <div class="quote_box">
+                <p>{{ quote.author }}</p>
+                <p>{{ quote.content }}</p>
+            </div>
+        {% endfor %}
+
+        <footer>
+            <h4>Powered By <span class="red">ReddGhost</span></h4>
+        </footer>
+    </main>
+
+</body>
+</html>

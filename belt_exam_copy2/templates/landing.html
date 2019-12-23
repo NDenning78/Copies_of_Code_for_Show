@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belt Exam</title>
+
+    <style>        
+        *{
+            padding: 0px;
+            margin: 0px auto;
+            /* outline: 1px solid red; */
+        }
+
+        body{
+            background-color:rgb(0, 0, 0);
+        }
+
+        #container{
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(106, 62, 62),rgb(0, 0, 0));
+            min-height: 400px;
+            width: 1366px;
+            border: 2px solid rgb(211, 20, 20);
+            border-radius: 7px;            
+        }
+
+        .left{
+            display: inline-block;
+            vertical-align: top;
+            width: 440px;
+            margin: 40px 0px 40px 30px;
+        }
+
+        .right{
+            display: inline-block;
+            vertical-align: top;
+            width: 440px;
+            border-right: 2px solid rgb(211, 20, 20);
+            border-top: 2px solid rgb(211, 20, 20);
+            border-radius: 20px;
+            background-image: linear-gradient(rgb(36, 17, 17),rgb(106, 62, 62),rgb(36, 17, 17));
+            margin: 40px 0px 0px 360px;
+        }
+
+        label{
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 0px 0px 70px;
+            padding: 5px 20px 5px 20px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        .edit_link{
+            display: inline-block;
+            vertical-align: top;
+            margin: 35px 0px 0px 260px;
+            padding: 2px 7px 2px 7px;           
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(211, 20, 20);
+            background-color: rgb(0,0,0);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        h1{
+            display: inline-block;
+            margin: 10px 0px 20px 20px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 56px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        h4{
+            display: inline-block;
+            margin: 10px 0px 20px 350px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(247, 175, 98);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        p{
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px 0px 5px 0px;
+            padding: 5px 20px 5px 20px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 22px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        .quote_post{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(0, 0, 0) ,rgb(62, 30, 30),rgb(60, 0, 0));
+            border-radius: 20px;
+            margin: 5px 0px 0px 0px;
+        }
+
+        .quote_box{
+            /* position: relative; */
+            display: inline-block;
+            vertical-align: top;
+            min-height: 140px;
+            width: 300px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(211, 20, 20);
+            margin: 5px 0px 40px 70px;
+            padding: 0px 0px 0px 10px;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;           
+            font-size: 20px;
+            border: 1px solid rgb(211, 20, 20);
+        }
+
+        .logout_button{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(106, 62, 62),rgb(0, 0, 0));
+            margin: 20px 0px 20px 20px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        .error_red{
+            display: inline-block;
+            background-color: rgb(0,0,0);
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 0, 0);
+            font-size: 22px;
+            text-align: center;
+            margin: 5px 0px 0px 100px;
+            padding: 3px 10px 3px 10px;
+            border-radius: 5px;
+        }
+    
+        form{   
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .red{
+            color: rgb(191, 0, 0);
+        }
+
+        .author_box{
+            min-height: 40px;
+            min-width: 200px;
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(41, 24, 24),rgb(0, 0, 0));
+            border-right: 2px solid rgb(211, 20, 20);
+            border-top: 2px solid rgb(211, 20, 20);
+            border-left: none;
+            border-bottom: none;
+            border-radius: 10px;
+            margin: 10px 0px 10px 5px;
+            text-align: center;
+        }
+
+        button{
+            display: inline-block;
+            margin: 5px 0px 0px 5px;
+            padding: 2px 7px 2px 7px;           
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(211, 20, 20);
+            background-color: rgb(0,0,0);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        a{
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px 0px 0px 5px;
+            padding: 2px 7px 2px 7px;           
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(211, 20, 20);
+            background-color: rgb(0,0,0);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+        .submit_button{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(36, 17, 17),rgb(106, 62, 62),rgb(36, 17, 17));
+            margin: 20px 0px 20px 220px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(211, 20, 20);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(211, 20, 20);
+            border-radius: 10px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <main id="container">
+
+        <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+        <a class="edit_link" href="/edit/{{session['user_id']}}">Edit My Account</a>
+        <a class="logout_button" href="/logout">Logout</a>
+
+        <div class="left">
+            {% if quotes %}
+                {% for quote in quotes %}
+                <div class="quote_post">
+                    <p>Author:{{ quote['author']}}</p>
+                    <p>Quote:{{ quote['content']}}</p>
+                    <p>Posted By: <a href="/posted_by_quotes/{{quote['user_id']}}">{{ quote['first_name']}} {{ quote['last_name']}}</a> </p>
+                
+
+                    <p>{{ quote['likes'] }}</p> 
+                
+
+                {% if quote.id in liked_quotes %}
+                <a href="/unlike/{{quote['id']}}"><button>Unlike This Message</button></a>
+                {% else: %}
+                <a href="/like/{{quote['id']}}"><button>Like This Message</button></a>
+                {% endif %}
+                        
+                <a href="/quote_details/{{quote['id']}}"><button>Quote Details</button></a>
+                {% if session['user_id'] == quote.user_id %}
+                    <a href="/delete/{{quote['id']}}"><button>Delete Message</button></a>
+
+                {% endif %}
+                    
+                </div>
+                
+
+                    
+                {%  endfor %}
+            {% endif %}
+
+        </div>
+
+        <div class="right">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error_red">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}             
+    
+            <form action="/save_quote" method="POST">
+                <label for="author">Author</label>
+                <input class="author_box" type="text" name="author">
+    
+                <label for="quote">Quote</label>
+                <input class="quote_box" type="text" name="quote_content">
+
+                <input class="submit_button" type="submit" name="submit" value="Submit Quote">
+            </form>
+        </div>
+
+        <footer>
+            <h4>Powered By <span class="red">ReddGhost</span></h4>
+        </footer>
+    </main>
+</body>
+</html>
