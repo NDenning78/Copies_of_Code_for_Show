@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi-Edit Tweet</title>
+    <style>        
+        *{
+            padding: 0px;
+            margin: 0px auto;
+            /* outline: 1px solid red; */
+        }
+
+        body{
+            background-color:rgb(0, 0, 0);
+        }
+
+        #container{
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(43, 69, 101),rgb(0, 0, 0));
+            /* background-color: rgb(0, 0, 0); */
+            min-height: 400px;
+            width: 970px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 7px;            
+        }
+
+        h1{
+            display: inline-block;
+            margin: 10px 0px 20px 70px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 56px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(57, 57, 57);
+            letter-spacing: 2px;
+        }
+
+
+        div{
+            /* outline: 1px solid red; */
+            /* background-color: rgb(31, 69, 80); */
+            min-height: 40px;
+            width: 900px;
+            background-image: linear-gradient(rgb(0, 0, 0),rgb(31, 69, 80),rgb(0, 0, 0));
+            border-right: 2px solid rgb(20, 199, 211);
+            border-top: 2px solid rgb(20, 199, 211);
+            border-radius: 50px;
+            margin: 10px 0px 10px 30px;
+        }
+
+        p{
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px 0px 5px 0px;
+            padding: 5px 20px 5px 20px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(19, 198, 129);
+            font-size: 22px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+        }
+
+        .tweet_name{
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 0px 0px 0px;
+            padding: 10px 5px 10px 5px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: rgb(0, 0, 0);
+            color: rgb(19, 198, 129);
+            font-size: 22px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border-radius: 40px;
+        }
+
+
+        .input_box{
+            /* position: relative; */
+            display: inline-block;
+            vertical-align: top;
+            min-height: 60px;
+            width: 300px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(20, 199, 211);
+            margin: 5px 0px 10px 10px;
+            padding: 0px 0px 0px 10px;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;           
+            font-size: 20px;
+            border: 1px solid rgb(20, 199, 211);
+        }
+
+        .submit_button{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(17, 32, 36),rgb(62, 87, 106),rgb(17, 32, 36));
+            margin: 20px 0px 20px 220px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 10px;
+        }
+        .logout_button{
+            display: inline-block;
+            vertical-align: top;
+            background-image: linear-gradient(rgb(17, 32, 36),rgb(62, 87, 106),rgb(17, 32, 36));
+            margin: 20px 0px 20px 150px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 10px;
+        }
+
+        .error_red{
+            display: inline-block;
+            background-color: rgb(0,0,0);
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 0, 0);
+            font-size: 22px;
+            text-align: center;
+            margin: 5px 0px 0px 100px;
+            padding: 3px 10px 3px 10px;
+            border-radius: 5px;
+        }
+    
+        form{   
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 0px 0px 140px;
+        }
+
+        .blue{
+            color: rgb(38, 79, 104);
+        }
+
+        button{
+            display: inline-block;
+            margin: 5px 0px 0px 5px;
+            padding: 2px 7px 2px 7px;           
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(210, 194, 80);
+            background-color: rgb(0,0,0);
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: rgb(210, 194, 80);
+            border-radius: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <main id="container">
+        <h1>Edit Tweet</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error_red">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/tweets/{{tweet.id}}/update" method='POST'>
+            <input class="input_box" type="text" name='content' value={{tweet.content}}>
+            <input class="submit_button" type="submit" value="Update">
+        </form>
+        <a href="/success"><button>Cancel</button></a>
+    </main>
+</body>
+</html>
