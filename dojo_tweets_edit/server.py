@@ -188,7 +188,6 @@ def unlike_tweet(tweet_id):
 @app.route("/tweets/<tweet_id>/delete")
 def delete_tweet(tweet_id):
     mysql = connectToMySQL(database)
-    # if ON DELETE CASCADE is not set up for tweets DELETE likes first
     query = "DELETE FROM liked_tweets WHERE tweet_id = %(tweet_id)s"
     data = {
         'tweet_id': tweet_id
