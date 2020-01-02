@@ -1,0 +1,256 @@
+<!-- Dojo Survey Index
+Neil Denning
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey With Flask and Python!!</title>
+    <style>    
+        *{
+            padding: 0px;
+            margin: 0px auto;
+        }
+
+        body{
+            background-color:rgb(0, 0, 0);
+        }
+
+        #wrapper{
+            background-image: linear-gradient(rgb(0, 23, 41),rgb(31, 69, 80),rgb(0, 23, 41));
+            min-height: 400px;
+            width: 970px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 7px;            
+        }
+
+        h1{
+            display: inline-block;
+            margin: 10px 0px 0px 140px;
+            padding: 5px 200px 5px 200px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 56px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(57, 57, 57);
+            letter-spacing: 2px;
+        }
+
+        p{
+            display: inline-block;
+            margin: 10px 0px 0px 140px;
+            padding: 5px 220px 5px 20px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(57, 57, 57);
+            letter-spacing: 3px;
+        }
+
+        /* ul{
+            display: inline-block;
+            vertical-align:  top;
+            min-height: 80px;
+            width: 800px;
+            margin: 10px 0px 0px 125px;
+        } */
+
+        .label{
+            display: inline-block;  
+            vertical-align: top;          
+            margin: 0px 0px 0px 122px;
+            padding: 10px 10px 10px 10px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(57, 57, 57);
+            letter-spacing: 3px;
+            /* outline: 1px solid red; */
+        }
+
+        .checkbox_label{
+            display: inline-block;            
+            margin: 0px 0px 0px 30px;
+            padding: 0px 0px 0px 0px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 16px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(57, 57, 57);
+            letter-spacing: 3px;
+            /* outline: 1px solid red; */
+        }
+
+        .submit_button{
+            display: inline-block;
+            background-image: linear-gradient(rgb(17, 32, 36),rgb(62, 87, 106),rgb(17, 32, 36));
+            margin: 0px 0px 20px 400px;
+            padding: 10px 15px 10px 15px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 24px;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            letter-spacing: 3px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 10px;
+        }
+
+        .comments_box{
+            display: inline-block;
+            min-height: 80px;
+            width: 650px;
+            background-image: linear-gradient(rgb(0, 23, 41),rgb(31, 69, 80),rgb(0, 23, 41));
+            margin: 5px 0px 20px 140px;
+            padding: 10px 20px 10px 20px;           
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(20, 199, 211);
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 3px;
+            border: 2px solid rgb(20, 199, 211);
+            border-radius: 10px;
+        }
+
+        select{
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(20, 199, 211);
+            margin: 5px 0px 5px 20px;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;           
+            font-size: 20px;
+            border: 1px solid rgb(20, 199, 211);
+        }
+
+        .name_box{
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 250px;
+            border-radius: 5px;
+            font-family: Ariel;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(20, 199, 211);
+            margin: 5px 0px 5px 20px;
+            padding: 0px 0px 0px 10px;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;           
+            font-size: 20px;
+            border: 1px solid rgb(20, 199, 211);
+        }
+
+        /* .dropbtn{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            background-color: rgb(151, 142, 121);
+            color: rgb(218, 195, 146);
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 2px 2px 2px black;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 20px;
+            border: none;
+        } */
+
+        /* .dropdown_content{
+            display: none;
+            position: absolute;
+            background-color: rgb(0, 0, 0);
+            min-width: 200px;   
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 20px;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <main id="wrapper">
+        <h1>Dojo Survey</h1>    
+        <form action="/action" method="POST">
+            <p>Your Name:<input class="name_box" type="text" name="user_name"></p>
+            <p>Dojo Location:
+                <select name="dojo_location">
+                    <option value="Seattle">Seattle</option>
+                    <option value="Washington, D.C.">Washington, D.C.</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Burbank">Burbank</option>
+                </select>
+            </p>
+            <p>Favorite Language:
+                <select name="favorite_language">
+                    <option value="Python">Python</option>
+                    <option value="Flask">Flask</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>                    
+                </select>
+            </p>
+            <p>Experience Level</p>
+            <label class="label">
+                <label for="Beginner" class="checkbox_label" >Beginner</label>
+                <input type="checkbox" id="Beginner" name="experience" value="Beginner">
+
+                <label for="Intermediate" class="checkbox_label" >Intermediate</label>
+                <input type="checkbox" id="Intermediate" name="experience" value="Intermediate">
+
+                <label for="Advanced" class="checkbox_label" >Advanced</label>
+                <input type="checkbox" id="Advanced" name="experience" value="Advanced">
+
+                <label for="Ninja" class="checkbox_label" >Ninja</label>
+                <input type="checkbox" id="Ninja" name="experience" value="Ninja">
+
+                <label for="Dojo Master" class="checkbox_label" >Dojo Master</label>
+                <input type="checkbox" id="Dojo Master" name="experience" value="Dojo Master">
+            </label>
+
+            <p>Select your gender:</p>
+            <div class="label">
+                <label for="male" class="checkbox_label" >Male</label>
+                <input type="radio" id="male" name="gender" value="Male">
+
+                <label for="female" class="checkbox_label" >Female</label>
+                <input type="radio" id="female" name="gender" value="Female">
+
+                <label for="decline" class="checkbox_label" >Prefer not to say</label>
+                <input type="radio" id="decline" name="gender" value="Prefer not to say">
+            </div>
+
+            <p>Comments (optional)</p>
+            <input class="comments_box" type="textarea" name="comment">
+            <input class="submit_button" type="submit" value="Submit">
+        </form>    
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
