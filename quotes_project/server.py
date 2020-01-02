@@ -1,4 +1,4 @@
-# Belt Exam at "Coding Dojo"
+# quotes project at "Coding Dojo"
 # Neil Denning
 
 from flask import Flask, render_template, redirect, request, session, flash
